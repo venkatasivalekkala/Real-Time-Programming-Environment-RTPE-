@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title> RealTime Programming Environment </title>
+	<!--   JQUERY  library --> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<!-- Firebase -->
+	<script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+
+	<!-- CodeMirror  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.js"></script>
+		<!-- enables use of JavaScript-style  highlighting  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/javascript/javascript.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/htmlmixed/htmlmixed.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.css" />
+
+	<!-- Firepad -->
+	<link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.1.0/firepad.css" />
+	<script src="https://cdn.firebase.com/libs/firepad/1.1.0/firepad.min.js"></script>
+
+		<!-- Firepad Themes -->
+	<link rel="stylesheet" type="text/css" href="css/themes.css">
+
+	<!---  Chat StyleSheet CSS       -->
+	<!--  Defines the properties of the ChatBox -->
+	<link rel="stylesheet" type="text/css" href="css/chat.css">
+
+	<!-- Overall Layout StyleSheet CSS -->
+	<!-- Defines the position of the Text-Box and Chatbox -->
+	<link rel="stylesheet" type="text/css"  href='css/layout.css'>
+
+	<script src="javascript/firepad-userlist.js"></script>
+	<link rel="stylesheet" href="css/firepad-userlist.css" />
+	
+	
+	
+	<!-- Defines how to initialize the TextBox as well as the Chatbox -->
+	<script src="javascript/rtpe.js"> </script>
+<style>
+body{
+	background-color:rgb(153,0,0);  
+}
+#wrapper{
+	height:100%;
+	width:100%;
+}
+realHeader{
+	position:relative;
+	/*float:left;*/
+	height:40px;
+	width:100%;
+	background-color:rgb(153,0,0);  
+  }
+.logo{
+	height:100px;
+	width:300px;
+	margin:0 auto 0;
+	bottom:115%;
+	background-color:rgb(153,0,0);
+}
+.logo ul{
+	list-style-type:none;
+	position:relative;
+	margin:0 auto 0;
+	bottom:50px;
+	left:75px;
+	borders:none;
+	background-color:rgb(153,0,0); 
+}
+
+.blackstrip{
+	height:50px;
+	width:100%;
+	position:relative;
+	top:20px;
+	background-color:rgb(51,51,51);
+	float:left;
+}
+.blackstrip_bottom{
+	height:30px;
+	width:100%;
+	position:relative;
+	bottom:30px;
+	background-color:rgba(51,51,51,1);
+	float:left;
+}
+footer{
+	height:60px;
+	width:100%;
+	position:relative;
+	top:0px;
+	background-color:rgb(153,0,0);  
+  }
+footer ul {
+	padding-left:35%;
+	list-style-type:none;
+}
+footer ul li a:link {
+	margin:30px 0 0 0;
+	text-decoration:none;
+	font-family:Verdan, sans-serif;
+	font-size:17px;
+	color:rgba(0,0,204,1);
+	text-align:center;
+	width:200px;
+	height:50px;
+	line-height:0px;
+	float:left;
+	border-radius:15px;
+}
+
+footer ul li a:hover {
+	position:relative;
+	color:rgba(255,255,255,1);
+	font-size:21px;
+}
+#smallcontainer {
+	width: 70%;
+	height: 97%;
+	float: left;
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+	
+}
+
+</style>
+</head>
+
+<body >
+	<div id="realHeader">
+  		<div class="blackstrip">
+   		 </div>
+  		<div class="logo">
+    	<ul >
+        	<li ><img src="images/logo_trpe_2.png" /></li>
+        </ul>
+    </div>
+  </div>
+  
+  
+  <div id="wrapper">
+	<span id="firepad-container">
+		<header> RTPE Code  <a id='downloadButton' onmouseover='createDownloadable()' href="">Download</a> </header>
+	</span>
+
+	<span id="firechat-container" class="example-chat l-demo-container"> 
+		<header>   RTPE Code Config </header>
+
+		<div>Select Language:  </div>
+		<select id="langSelect"		style="width:240px">		</select>
+		<br/>
+
+		<div>Select Theme </div> 
+		<select id='themeSelect'	style='width:240px'>		</select>
+		<header> RTPE Chat</header>
+		<div id='userListContainer' > </div>
+
+		<ul id="example-messages" class="example-chat-messages"></ul>
+		<div>
+			<input type="text" id="messageInput" maxlength="100" placeholder="type a message...">
+		</div>
+		
+	</span>
+  </div>
+    <footer>
+   		<ul>
+    		<li><a href="http://www.cs.sdsu.edu/">More</a></li>
+        	<li><a href="http://www.sdsu.edu">SDSU</a></li>
+        	<li><a href="http://www-rohan.sdsu.edu/~wwang/">About</a></li>
+    	</ul>
+        <div class="blackstrip_bottom">
+    </div>
+    </footer>
+	
+</body>
+</html>

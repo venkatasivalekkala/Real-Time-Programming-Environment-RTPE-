@@ -1,0 +1,73 @@
+PROJECT NAME: RealTime Programming Environment (RTPE)
+
+Project Description : 
+	....
+	 
+				FILES:
+				
+*index.html:
+	-HEAD : 
+		contains all script imports such as Firepad, Firebase
+		Jquery ..etc  as well as the css style sheets 
+		
+		CodeMirror is being used as the TextBox 
+			check out CodeMirror API 
+			http://codemirror.net/doc/manual.html
+			
+		
+	-BODY:	
+		cotains the main containers for the textbox, chatbox and OnlineBar as 2
+		'span tags'. note: online bar is inside the chatbox tag
+		
+*javascript/rtpe.js:
+	- Defines how to initialize the TextBox, Chatbox as well as the OnlineBar
+	- init_firepad(sessionRef: String, userid: string)
+	- init_chat(sessionRef: String, userid: string)
+	- init_online_bar((sessionRef: String, userid: string)
+	- getHash() 
+	- createDownloadable()
+	- changeTheme()
+	- changeMode()
+	
+	
+*javascript/firepad-userlist.js
+	-Defines how to update the OnlineBar as well as how to create it 
+
+*css/layout.css:
+	- Defines how to arrange the TextBox and the Chatbox
+	- can overwrite rules applied to the TextBox such as colors.
+	- can also overwrite rules in chat.css
+
+*css/chat.css:
+	- Defines some basic rules of how to display the chat box, such as 
+	 background color, shadow, size, etc. 
+	 
+*css/themes.css:
+	- defines different TextBox syntax Highlighting schemes such as Cobalt, eclipse, etc...
+
+				DataBase:
+each session creates a new database entry. The entry contains 3 fields
+-code		: stores all the code and changes of the TextBox 
+-chat		: stores all the chat history
+-users	: stores/deletes the users that at online (watching the document)
+
+for later: (DONE)
+	make it create a unique entry in each database per session 
+	eg.
+		https://rtpechat.firebaseio.com/PROJECT_NAME 
+		https://realtimeprogenv.firebaseio.com/PROJECT_NAME
+	
+	this way a project can be shared by a unique link. 
+	
+USEFUL LINKS:
+
+for the API to change some styles 
+	http://www.firepad.io/docs/
+	http://www.firepad.io/docs/#api
+
+if you know nothing about html, css and js 
+	http://www.w3schools.com/
+
+
+
+
